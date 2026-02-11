@@ -1,23 +1,22 @@
 const features = [
-  { name: "Meta Ads (Facebook & Instagram)", starter: true, groei: true, scale: true },
-  { name: "Google Ads (Search & Shopping)", starter: false, groei: true, scale: true },
-  { name: "TikTok Ads", starter: false, groei: false, scale: true },
-  { name: "LinkedIn Ads", starter: false, groei: false, scale: "Optioneel" },
-  { name: "Dagelijkse AI-optimalisatie", starter: true, groei: true, scale: true },
-  { name: "Actieve campagnes", starter: "3", groei: "6", scale: "Onbeperkt" },
-  { name: "Ad copy variaties / maand", starter: "6", groei: "12", scale: "Onbeperkt" },
-  { name: "Strategiegesprek", starter: "1×/mnd (30 min)", groei: "1×/mnd (45 min)", scale: "Wekelijks" },
-  { name: "Realtime dashboard", starter: true, groei: true, scale: true },
-  { name: "Wekelijkse rapportage", starter: false, groei: true, scale: true },
-  { name: "Maandelijkse rapportage", starter: true, groei: true, scale: true },
-  { name: "A/B testing", starter: false, groei: true, scale: true },
-  { name: "Retargeting funnel setup", starter: false, groei: true, scale: true },
-  { name: "Creative briefings & feedback", starter: true, groei: true, scale: true },
-  { name: "Creative productie support", starter: false, groei: false, scale: true },
-  { name: "Priority support (< 4 uur)", starter: false, groei: false, scale: true },
-  { name: "Dedicated account lead", starter: false, groei: false, scale: true },
-  { name: "Custom integraties", starter: false, groei: false, scale: "Op aanvraag" },
-  { name: "Aanbevolen ad spend", starter: "€500–€2K", groei: "€2K–€5K", scale: "€5K+" },
+  { name: "Meta Ads (Facebook & Instagram)", launch: true, growth: true, scale: true },
+  { name: "Google Ads (Search & Shopping)", launch: true, growth: true, scale: true },
+  { name: "TikTok Ads", launch: false, growth: true, scale: true },
+  { name: "LinkedIn Ads", launch: false, growth: false, scale: "Optioneel" },
+  { name: "Dagelijkse AI-optimalisatie", launch: true, growth: true, scale: true },
+  { name: "Actieve campagnes", launch: "4", growth: "8", scale: "Onbeperkt" },
+  { name: "Ad copy variaties / maand", launch: "8", growth: "16", scale: "Onbeperkt" },
+  { name: "Strategiegesprek", launch: "1×/mnd", growth: "2×/mnd", scale: "Wekelijks" },
+  { name: "Realtime dashboard", launch: true, growth: true, scale: true },
+  { name: "Wekelijkse rapportage", launch: true, growth: true, scale: true },
+  { name: "A/B testing", launch: true, growth: true, scale: true },
+  { name: "Retargeting funnel setup", launch: true, growth: true, scale: true },
+  { name: "Creative briefings & feedback", launch: true, growth: true, scale: true },
+  { name: "Creative productie support", launch: false, growth: true, scale: true },
+  { name: "Priority support (< 4 uur)", launch: false, growth: false, scale: true },
+  { name: "Dedicated account lead", launch: false, growth: true, scale: true },
+  { name: "Custom integraties", launch: false, growth: false, scale: "Op aanvraag" },
+  { name: "Aanbevolen ad spend", launch: "< €2K", growth: "€2K–€5K", scale: "€5K–€15K" },
 ];
 
 function FeatureCell({ value }: { value: boolean | string }) {
@@ -49,87 +48,91 @@ export default function Pricing() {
 
         {/* Cards */}
         <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {/* Starter */}
-          <div className="rounded-2xl p-8 bg-white border border-charcoal/10">
-            <h3 className="font-headline text-xl font-bold">Starter</h3>
+          {/* Launch */}
+          <div className="rounded-2xl p-8 bg-white border border-charcoal/10 hover:border-teal/30 transition-colors">
+            <h3 className="font-headline text-xl font-bold">Launch</h3>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="font-mono text-4xl font-medium">€500</span>
+              <span className="font-mono text-4xl font-medium text-teal">€750</span>
               <span className="text-sm text-charcoal/50">/maand</span>
             </div>
             <p className="mt-3 text-sm text-charcoal/50">
-              Perfect om te starten met professionele Meta Ads.
+              Meta + Google Ads beheer. Perfect om professioneel te starten.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-charcoal/70">
               <li className="flex items-center gap-2">
-                <span className="text-teal">✓</span> Meta Ads beheer
+                <span className="text-teal">✓</span> Meta + Google Ads
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-teal">✓</span> 3 campagnes
+                <span className="text-teal">✓</span> 4 actieve campagnes
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-teal">✓</span> Maandelijks gesprek
+                <span className="text-teal">✓</span> Wekelijkse rapportage
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-teal">✓</span> €500–€2K spend
+                <span className="text-teal">✓</span> Dedicated AI-agent
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-charcoal/40">↳</span> Tot €2.000 ad spend
               </li>
             </ul>
             <a
               href="#start"
               className="mt-8 block text-center py-3 rounded-lg font-headline font-medium bg-charcoal hover:bg-charcoal/90 text-white transition-colors text-sm"
             >
-              Start met Starter →
+              Start vandaag →
             </a>
           </div>
 
-          {/* Groei */}
-          <div className="rounded-2xl p-8 bg-teal text-white ring-2 ring-teal relative">
-            <span className="inline-block font-mono text-xs tracking-wider bg-coral text-white px-3 py-1 rounded-full mb-2">
-              MEEST GEKOZEN
+          {/* Growth */}
+          <div className="rounded-2xl p-8 bg-gradient-to-br from-teal to-teal/90 text-white ring-2 ring-teal relative shadow-lg shadow-teal/20">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 font-mono text-xs tracking-wider bg-coral text-white px-4 py-1.5 rounded-full shadow-md">
+              POPULAIR
             </span>
-            <h3 className="font-headline text-xl font-bold">Groei</h3>
+            <h3 className="font-headline text-xl font-bold mt-2">Growth</h3>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="font-mono text-4xl font-medium">€900</span>
+              <span className="font-mono text-4xl font-medium">€1.250</span>
               <span className="text-sm text-white/60">/maand</span>
             </div>
             <p className="mt-3 text-sm text-white/70">
-              Meta + Google Ads. Volledige funnel. Serieus schalen.
+              Volledige funnel. TikTok erbij. Voor serieuze groei.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-white/80">
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> Meta + Google Ads
+                <span className="text-coral">✓</span> Meta + Google + TikTok
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> 6 campagnes
+                <span className="text-coral">✓</span> 8 actieve campagnes
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> Wekelijkse rapportage
+                <span className="text-coral">✓</span> 2× strategiegesprek/mnd
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> €2K–€5K spend
+                <span className="text-coral">✓</span> Creative productie support
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-white/50">↳</span> €2K–€5K ad spend
               </li>
             </ul>
             <a
               href="#start"
-              className="mt-8 block text-center py-3 rounded-lg font-headline font-medium bg-coral hover:bg-coral-dark text-white transition-colors text-sm"
+              className="mt-8 block text-center py-3 rounded-lg font-headline font-medium bg-coral hover:bg-coral-dark text-white transition-colors text-sm shadow-md"
             >
-              Start met Groei →
+              Start vandaag →
             </a>
           </div>
 
           {/* Scale */}
-          <div className="rounded-2xl p-8 bg-gradient-to-br from-charcoal to-charcoal/90 text-white relative overflow-hidden">
+          <div className="rounded-2xl p-8 bg-gradient-to-br from-charcoal to-charcoal/90 text-white relative overflow-hidden hover:shadow-lg transition-shadow">
             <div className="absolute top-0 right-0 w-32 h-32 bg-coral/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <span className="inline-block font-mono text-xs tracking-wider bg-white/10 text-white/80 px-3 py-1 rounded-full mb-2">
-              CUSTOM
-            </span>
             <h3 className="font-headline text-xl font-bold">Scale</h3>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="font-mono text-3xl font-medium">Op maat</span>
+              <span className="font-mono text-4xl font-medium text-coral">€1.750</span>
+              <span className="text-sm text-white/50">/maand</span>
             </div>
-            <p className="mt-3 text-sm text-white/70">
-              Alle platformen. Onbeperkt. Wekelijks contact. Voor serieuze groeiers.
+            <p className="mt-3 text-sm text-white/60">
+              Alle platformen. Wekelijks contact. Maximale schaal.
             </p>
-            <ul className="mt-6 space-y-2 text-sm text-white/80">
+            <ul className="mt-6 space-y-2 text-sm text-white/70">
               <li className="flex items-center gap-2">
                 <span className="text-coral">✓</span> Alle platformen
               </li>
@@ -140,17 +143,17 @@ export default function Pricing() {
                 <span className="text-coral">✓</span> Wekelijks strategiegesprek
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> Priority support
+                <span className="text-coral">✓</span> Priority support (< 4 uur)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> €5K+ spend
+                <span className="text-white/40">↳</span> €5K–€15K ad spend
               </li>
             </ul>
             <a
               href="#start"
               className="mt-8 block text-center py-3 rounded-lg font-headline font-medium bg-white text-charcoal hover:bg-white/90 transition-colors text-sm"
             >
-              Neem contact op →
+              Start vandaag →
             </a>
           </div>
         </div>
@@ -161,8 +164,8 @@ export default function Pricing() {
             <thead>
               <tr className="border-b border-charcoal/10">
                 <th className="text-left py-3 font-medium text-charcoal/60">Feature</th>
-                <th className="text-center py-3 font-mono text-xs tracking-wider text-charcoal/40 w-24">STARTER</th>
-                <th className="text-center py-3 font-mono text-xs tracking-wider text-teal w-24">GROEI</th>
+                <th className="text-center py-3 font-mono text-xs tracking-wider text-charcoal/40 w-24">LAUNCH</th>
+                <th className="text-center py-3 font-mono text-xs tracking-wider text-teal w-24">GROWTH</th>
                 <th className="text-center py-3 font-mono text-xs tracking-wider text-charcoal w-24">SCALE</th>
               </tr>
             </thead>
@@ -170,8 +173,8 @@ export default function Pricing() {
               {features.map((f) => (
                 <tr key={f.name} className="border-b border-charcoal/5">
                   <td className="py-3 text-charcoal/70">{f.name}</td>
-                  <td className="py-3 text-center"><FeatureCell value={f.starter} /></td>
-                  <td className="py-3 text-center"><FeatureCell value={f.groei} /></td>
+                  <td className="py-3 text-center"><FeatureCell value={f.launch} /></td>
+                  <td className="py-3 text-center"><FeatureCell value={f.growth} /></td>
                   <td className="py-3 text-center"><FeatureCell value={f.scale} /></td>
                 </tr>
               ))}
@@ -183,36 +186,59 @@ export default function Pricing() {
         <div className="mt-8 flex flex-wrap gap-4">
           <div className="bg-warm-bg rounded-lg px-4 py-3 text-sm">
             <span className="text-charcoal/40">Add-on:</span>{" "}
-            <span className="font-medium">TikTok Ads</span>{" "}
-            <span className="font-mono text-teal">+€200/mnd</span>
+            <span className="font-medium">LinkedIn Ads</span>{" "}
+            <span className="font-mono text-teal">+€300/mnd</span>
           </div>
           <div className="bg-warm-bg rounded-lg px-4 py-3 text-sm">
             <span className="text-charcoal/40">Add-on:</span>{" "}
             <span className="font-medium">Extra strategy call</span>{" "}
-            <span className="font-mono text-teal">€75/sessie</span>
+            <span className="font-mono text-teal">€95/sessie</span>
           </div>
           <div className="bg-warm-bg rounded-lg px-4 py-3 text-sm">
             <span className="text-charcoal/40">Eenmalig:</span>{" "}
-            <span className="font-medium">Tracking audit</span>{" "}
-            <span className="font-mono text-teal">€150</span>
+            <span className="font-medium">Tracking audit + setup</span>{" "}
+            <span className="font-mono text-teal">€250</span>
           </div>
         </div>
 
-        {/* Scale CTA */}
-        <div className="mt-12 bg-gradient-to-r from-charcoal to-charcoal/90 rounded-2xl p-8 md:p-10 text-white">
+        {/* Nodefy CTA - voor grotere budgetten */}
+        <div className="mt-12 bg-gradient-to-r from-teal/5 via-coral/5 to-teal/5 border border-teal/20 rounded-2xl p-8 md:p-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h3 className="font-headline text-xl md:text-2xl font-bold">Meer dan €5K ad spend?</h3>
-              <p className="mt-2 text-white/70 max-w-md">
-                Voor grotere budgetten werken we samen met <span className="text-coral">Nodefy</span> — 
-                ons zusterbedrijf met 10+ specialisten en enterprise-capaciteit.
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-2xl">🚀</span>
+                <span className="font-mono text-xs tracking-wider bg-coral/10 text-coral px-3 py-1 rounded-full">
+                  ENTERPRISE
+                </span>
+              </div>
+              <h3 className="font-headline text-xl md:text-2xl font-bold text-charcoal">
+                Meer dan €15K ad spend per maand?
+              </h3>
+              <p className="mt-2 text-charcoal/60 max-w-lg">
+                Voor grotere budgetten en complexere setups werken we samen met{" "}
+                <span className="font-semibold text-teal">Nodefy</span> — ons zusterbedrijf 
+                met 10+ specialisten, enterprise tracking, en dedicated teams.
               </p>
+              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-charcoal/50">
+                <li className="flex items-center gap-1">
+                  <span className="text-teal">✓</span> Dedicated team
+                </li>
+                <li className="flex items-center gap-1">
+                  <span className="text-teal">✓</span> Enterprise tracking
+                </li>
+                <li className="flex items-center gap-1">
+                  <span className="text-teal">✓</span> Custom dashboards
+                </li>
+                <li className="flex items-center gap-1">
+                  <span className="text-teal">✓</span> Multi-market
+                </li>
+              </ul>
             </div>
             <a
               href="https://nodefy.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-coral hover:bg-coral-dark text-white font-headline font-medium rounded-lg transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-charcoal hover:bg-charcoal/90 text-white font-headline font-medium rounded-xl transition-colors whitespace-nowrap shadow-lg"
             >
               Bekijk Nodefy →
             </a>
