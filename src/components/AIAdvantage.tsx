@@ -17,7 +17,7 @@ const comparisons = [
   {
     label: "Maandelijkse kosten",
     traditional: "€1.500 – €3.000",
-    morgen: "€500 – €900",
+    morgen: "€750 – €1.750",
   },
   {
     label: "Minimale contractduur",

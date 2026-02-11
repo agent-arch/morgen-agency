@@ -64,8 +64,8 @@ export default function PropositiePage() {
             <span className="text-teal">zonder agency-prijzen.</span>
           </h1>
           <p className="text-lg text-charcoal/60 max-w-[580px] leading-relaxed mb-4">
-            AI-native advertising voor e-commerce webshops met €500–€5.000 ad spend per maand. 
-            Dagelijkse optimalisatie, maandelijks strategiegesprek, vanaf €500/maand.
+            AI-native advertising voor e-commerce webshops met €500–€10.000 ad spend per maand. 
+            Dagelijkse optimalisatie, maandelijks strategiegesprek, vanaf €750/maand.
           </p>
           <p className="text-sm text-charcoal/35 mb-16">Document versie 1.0 — februari 2026</p>
 
@@ -109,8 +109,8 @@ export default function PropositiePage() {
                 <p className="text-sm font-medium mb-2">Profiel</p>
                 <ul className="text-sm text-charcoal/60 space-y-1.5">
                   <li>• E-commerce webshops (Shopify, WooCommerce, etc.)</li>
-                  <li>• Ad spend: €500 – €5.000/maand</li>
-                  <li>• Omzet: €50K – €500K/jaar</li>
+                  <li>• Ad spend: €500 – €10.000/maand</li>
+                  <li>• Omzet: €50K – €1.5M/jaar</li>
                   <li>• Team: 1-5 personen</li>
                   <li>• Fysieke producten, eigen merk of curated</li>
                 </ul>
@@ -220,36 +220,58 @@ export default function PropositiePage() {
           {/* 4. Pricing */}
           <SectionHeader id="pricing" num="04" title="Pricing" />
 
-          <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <div className="grid sm:grid-cols-3 gap-4 mb-6">
             <Card>
-              <h3 className="font-headline text-xl font-bold">Starter</h3>
-              <p className="font-mono text-3xl font-medium text-teal mt-2">€500<span className="text-sm text-charcoal/40">/mnd</span></p>
+              <h3 className="font-headline text-xl font-bold">Launch</h3>
+              <p className="font-mono text-3xl font-medium text-teal mt-2">€750<span className="text-sm text-charcoal/40">/mnd</span></p>
               <ul className="mt-4 space-y-2 text-sm text-charcoal/60">
-                <li>✓ Meta Ads (Facebook + Instagram)</li>
-                <li>✓ Max 3 actieve campagnes</li>
+                <li>✓ Meta + Google Ads</li>
+                <li>✓ Max 4 actieve campagnes</li>
                 <li>✓ Dagelijkse AI-optimalisatie</li>
-                <li>✓ Tot 6 ad variaties/maand</li>
-                <li>✓ Maandelijkse rapportage + dashboard</li>
-                <li>✓ 1× strategiegesprek (30 min)</li>
-                <li className="text-charcoal/40">Aanbevolen spend: €500–€2K/mnd</li>
+                <li>✓ Tot 8 ad variaties/maand</li>
+                <li>✓ Wekelijkse rapportage + dashboard</li>
+                <li>✓ 1× strategiegesprek/maand</li>
+                <li className="text-charcoal/40">Aanbevolen spend: &lt;€2K/mnd</li>
               </ul>
             </Card>
             <Card className="ring-2 ring-teal">
-              <span className="inline-block font-mono text-xs tracking-wider bg-teal text-white px-3 py-1 rounded-full mb-2">MEEST GEKOZEN</span>
-              <h3 className="font-headline text-xl font-bold">Groei</h3>
-              <p className="font-mono text-3xl font-medium text-teal mt-2">€900<span className="text-sm text-charcoal/40">/mnd</span></p>
+              <span className="inline-block font-mono text-xs tracking-wider bg-teal text-white px-3 py-1 rounded-full mb-2">POPULAIR</span>
+              <h3 className="font-headline text-xl font-bold">Growth</h3>
+              <p className="font-mono text-3xl font-medium text-teal mt-2">€1.250<span className="text-sm text-charcoal/40">/mnd</span></p>
               <ul className="mt-4 space-y-2 text-sm text-charcoal/60">
-                <li>✓ Meta + Google Ads (Search & Shopping)</li>
-                <li>✓ Max 6 actieve campagnes</li>
+                <li>✓ Meta + Google + TikTok Ads</li>
+                <li>✓ Max 8 actieve campagnes</li>
                 <li>✓ Dagelijkse AI-optimalisatie</li>
-                <li>✓ Tot 12 ad variaties/maand</li>
+                <li>✓ Tot 16 ad variaties/maand</li>
                 <li>✓ Wekelijkse rapportage + dashboard</li>
-                <li>✓ 1× strategiegesprek (45 min)</li>
-                <li>✓ Retargeting funnel + A/B testing</li>
+                <li>✓ 2× strategiegesprek/maand</li>
+                <li>✓ Creative productie support</li>
                 <li className="text-charcoal/40">Aanbevolen spend: €2K–€5K/mnd</li>
               </ul>
             </Card>
+            <Card className="bg-charcoal text-white">
+              <h3 className="font-headline text-xl font-bold">Scale</h3>
+              <p className="font-mono text-3xl font-medium text-coral mt-2">€1.750<span className="text-sm text-white/40">/mnd</span></p>
+              <ul className="mt-4 space-y-2 text-sm text-white/70">
+                <li>✓ Alle platformen</li>
+                <li>✓ Onbeperkte campagnes</li>
+                <li>✓ Dagelijkse AI-optimalisatie</li>
+                <li>✓ Onbeperkte ad variaties</li>
+                <li>✓ Wekelijkse rapportage + dashboard</li>
+                <li>✓ Wekelijks strategiegesprek</li>
+                <li>✓ Priority support (&lt;4 uur)</li>
+                <li className="text-white/40">Aanbevolen spend: €5K–€10K/mnd</li>
+              </ul>
+            </Card>
           </div>
+
+          <Card className="mb-6 bg-teal/5 border-teal/20">
+            <p className="font-headline font-bold text-sm mb-3">Meer dan €10K ad spend?</p>
+            <p className="text-sm text-charcoal/60 mb-3">
+              Voor grotere budgetten werken we samen met <strong>Nodefy</strong> — ons zusterbedrijf met 10+ specialisten en enterprise-capaciteit.
+            </p>
+            <a href="https://nodefy.nl" className="text-sm text-teal hover:underline">Bekijk Nodefy →</a>
+          </Card>
 
           <Card className="mb-6">
             <p className="font-headline font-bold text-sm mb-3">Pricing logica</p>
@@ -258,7 +280,7 @@ export default function PropositiePage() {
               <li>• <strong>Vaste fee</strong> — voorspelbaar voor de klant</li>
               <li>• <strong>2 maanden minimum</strong> — we hebben data nodig om te optimaliseren</li>
               <li>• <strong>Daarna maandelijks opzegbaar</strong> met 14 dagen opzegtermijn</li>
-              <li>• <strong>Doorverwijzing bij &gt;€5K spend</strong> — warme overdracht naar Nodefy</li>
+              <li>• <strong>Doorverwijzing bij &gt;€10K spend</strong> — warme overdracht naar Nodefy</li>
             </ul>
           </Card>
 
@@ -335,7 +357,7 @@ export default function PropositiePage() {
                 {[
                   ["Beschikbaarheid", "1 persoon", "Kantoortijden", "24/7 AI"],
                   ["Consistentie", "Wisselend", "Junior met 20+ accounts", "Gestandaardiseerd"],
-                  ["Prijs / maand", "€300-800", "€1.500-3.000", "€500-900"],
+                  ["Prijs / maand", "€300-800", "€1.500-3.000", "€750-1.750"],
                   ["Minimale commit", "Varieert", "6-12 maanden", "2 maanden"],
                   ["Rapportage", "Ad hoc PDF", "Maandelijks PDF", "Live dashboard"],
                   ["Eerlijk bij doorgroei", "N.v.t.", "Nee (willen je houden)", "Ja (doorverwijzing)"],
@@ -379,9 +401,9 @@ export default function PropositiePage() {
             <p className="font-mono text-xs tracking-wider text-white/50 mb-4">SAMENVATTING</p>
             <div className="grid sm:grid-cols-2 gap-6 text-sm">
               <div className="space-y-3">
-                <p><span className="text-white/50">Voor wie:</span> E-commerce, €500-5K ad spend</p>
-                <p><span className="text-white/50">Wat:</span> AI-gedreven Meta + Google Ads</p>
-                <p><span className="text-white/50">Prijs:</span> €500 of €900/maand, vast</p>
+                <p><span className="text-white/50">Voor wie:</span> E-commerce, €500-10K ad spend</p>
+                <p><span className="text-white/50">Wat:</span> AI-gedreven Meta + Google + TikTok Ads</p>
+                <p><span className="text-white/50">Prijs:</span> €750 / €1.250 / €1.750 per maand</p>
               </div>
               <div className="space-y-3">
                 <p><span className="text-white/50">Hoe:</span> Dagelijkse AI + maandelijks gesprek</p>

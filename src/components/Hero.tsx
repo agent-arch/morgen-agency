@@ -58,7 +58,7 @@ export default function Hero() {
             <p className="text-xs text-charcoal/35 mt-0.5">van intake tot resultaat</p>
           </div>
           <div>
-            <p className="font-mono text-3xl md:text-4xl font-medium text-teal">€500</p>
+            <p className="font-mono text-3xl md:text-4xl font-medium text-teal">€750</p>
             <p className="text-sm text-charcoal/50 mt-1">vanaf / maand</p>
             <p className="text-xs text-charcoal/35 mt-0.5">vast bedrag, geen % van spend</p>
           </div>
