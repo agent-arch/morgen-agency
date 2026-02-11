@@ -36,6 +36,7 @@ interface UpdateData {
 }
 
 const documents = [
+  { id: 'email-outreach', title: '📧 EMAIL OUTREACH PLAN', description: 'Domein, warm-up, data, sequences — NIEUW', file: 'EMAIL-OUTREACH-PLAN.md' },
   { id: 'masterplan', title: 'MASTERPLAN', description: 'Volledige roadmap, fases, milestones', file: 'MASTERPLAN.md' },
   { id: 'propositie', title: 'PROPOSITIE', description: 'Pricing, diensten, doelgroep', file: 'PROPOSITIE.md' },
   { id: 'brandbook', title: 'BRANDBOOK', description: 'Kleuren, fonts, tone of voice', file: 'BRANDBOOK.md' },
