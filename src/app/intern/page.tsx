@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react'
 // Password protection
 const CORRECT_PASSWORD = 'nodefy123'
 
-// Activity log
+// Activity log - newest first
 const activityLog = [
+  { date: '2026-02-11 22:29', action: '🎉 DOMEIN GEKOCHT', detail: 'heymorgen.agency is van ons!' },
+  { date: '2026-02-11 22:24', action: 'LinkedIn posts klaar', detail: '5 posts ready to copy & paste' },
+  { date: '2026-02-11 22:20', action: '/intern page live', detail: 'Dit dashboard' },
   { date: '2026-02-11 21:55', action: 'Google Workspace guide', detail: 'Setup instructies voor email' },
   { date: '2026-02-11 21:55', action: 'LinkedIn setup guide', detail: 'Company page + eerste 5 posts' },
-  { date: '2026-02-11 21:55', action: 'Domein opties', detail: '8 alternatieven voor morgen.agency' },
-  { date: '2026-02-11 21:40', action: 'Intern dashboard live', detail: 'Password protected /intern' },
   { date: '2026-02-11 21:36', action: 'Content Agent voltooid', detail: '20 LinkedIn posts + lead magnets' },
   { date: '2026-02-11 21:35', action: 'Outreach Agent voltooid', detail: 'Playbook met templates' },
   { date: '2026-02-11 21:34', action: 'ICP Agent voltooid', detail: '5 buyer personas' },
@@ -18,10 +19,8 @@ const activityLog = [
   { date: '2026-02-11 21:30', action: 'Masterplan geschreven', detail: 'Volledige roadmap' },
   { date: '2026-02-11 20:52', action: 'Scale tier toegevoegd', detail: '3e pricing optie' },
   { date: '2026-02-11 20:33', action: 'Website v2 live', detail: 'Verbeterde homepage + /propositie' },
-  { date: '2026-02-11 18:45', action: 'Website v1 live', detail: 'Eerste versie morgen.agency' },
-  { date: '2026-02-11 18:00', action: 'Brand Agent voltooid', detail: 'Brandbook compleet' },
-  { date: '2026-02-11 17:59', action: 'Propositie Agent voltooid', detail: 'Pricing & diensten' },
-  { date: '2026-02-11 17:54', action: 'Project gestart', detail: 'OpenClaw Agency initiated' },
+  { date: '2026-02-11 18:45', action: 'Website v1 live', detail: 'Eerste versie' },
+  { date: '2026-02-11 17:54', action: 'Project gestart', detail: 'heymorgen.agency initiated' },
 ]
 
 // Documents data
@@ -76,29 +75,29 @@ const documents = [
     file: 'ADS-STRATEGY.md',
   },
   {
-    id: 'domein',
-    title: 'DOMEIN OPTIES',
-    description: '8 alternatieven voor morgen.agency',
+    id: 'linkedin-posts',
+    title: 'LINKEDIN POSTS',
+    description: '5 posts klaar om te posten',
     status: 'new',
-    file: 'DOMEIN-OPTIES.md',
+    file: 'LINKEDIN-POSTS-READY.md',
   },
   {
     id: 'linkedin',
     title: 'LINKEDIN SETUP',
     description: 'Company page, posts, engagement strategie',
-    status: 'new',
+    status: 'live',
     file: 'LINKEDIN-SETUP.md',
   },
   {
     id: 'workspace',
     title: 'GOOGLE WORKSPACE',
     description: 'Email setup instructies',
-    status: 'new',
+    status: 'live',
     file: 'GOOGLE-WORKSPACE-SETUP.md',
   },
 ]
 
-// Progress data
+// Progress data - UPDATED with domain
 const phases = [
   {
     name: 'Fase 1: Fundament',
@@ -108,7 +107,8 @@ const phases = [
       { task: 'Brandbook maken', done: true },
       { task: 'Website bouwen', done: true },
       { task: 'ICP definiëren', done: true },
-      { task: 'Domein kopen', done: false },
+      { task: 'Domein kopen (heymorgen.agency)', done: true },
+      { task: 'DNS koppelen', done: false },
     ],
   },
   {
@@ -118,7 +118,9 @@ const phases = [
       { task: 'Outreach playbook', done: true },
       { task: 'Content strategie', done: true },
       { task: 'Ads strategie', done: true },
-      { task: 'LinkedIn starten', done: false },
+      { task: 'LinkedIn posts schrijven', done: true },
+      { task: 'LinkedIn company page', done: false },
+      { task: 'Google Workspace setup', done: false },
       { task: 'Eerste outreach', done: false },
       { task: 'Ads live', done: false },
     ],
@@ -136,11 +138,11 @@ const phases = [
   },
 ]
 
-// KPIs
+// KPIs - UPDATED
 const kpis = [
-  { label: 'Documenten', value: '7/7', target: '7', color: 'teal' },
+  { label: 'Documenten', value: '10/10', target: '10', color: 'teal' },
+  { label: 'LinkedIn Posts', value: '5', target: '5', color: 'teal' },
   { label: 'Leads', value: '0', target: '50', color: 'charcoal' },
-  { label: 'Gesprekken', value: '0', target: '5', color: 'charcoal' },
   { label: 'Klanten', value: '0', target: '1', color: 'charcoal' },
   { label: 'MRR', value: '€0', target: '€500', color: 'charcoal' },
 ]
@@ -202,7 +204,7 @@ export default function InternPage() {
       <main className="min-h-screen bg-warm-bg flex items-center justify-center p-6">
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-charcoal/10 w-full max-w-sm">
           <div className="text-center mb-6">
-            <span className="font-headline text-2xl font-bold text-teal">morgen</span>
+            <span className="font-headline text-2xl font-bold text-teal">heymorgen</span>
             <span className="text-coral text-2xl">.</span>
             <p className="text-sm text-charcoal/50 mt-2">Intern Dashboard</p>
           </div>
@@ -234,9 +236,12 @@ export default function InternPage() {
       <header className="bg-white border-b border-charcoal/10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-headline text-xl font-bold text-teal">morgen</span>
+            <span className="font-headline text-xl font-bold text-teal">heymorgen</span>
             <span className="text-coral text-xl">.</span>
             <span className="text-sm text-charcoal/50 ml-2">Intern Dashboard</span>
+            <span className="ml-4 text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">
+              🎉 Domein gekocht!
+            </span>
           </div>
           <button
             onClick={handleLogout}
@@ -248,6 +253,20 @@ export default function InternPage() {
       </header>
 
       <div className="max-w-7xl mx-auto p-6">
+        {/* Domain Alert */}
+        <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="font-headline font-bold text-emerald-800">✅ heymorgen.agency is gekocht!</h3>
+              <p className="text-sm text-emerald-700 mt-1">Volgende stap: DNS koppelen aan Vercel</p>
+            </div>
+            <div className="text-right text-sm text-emerald-600">
+              <p><strong>A Record:</strong> @ → 76.76.21.21</p>
+              <p><strong>CNAME:</strong> www → cname.vercel-dns.com</p>
+            </div>
+          </div>
+        </div>
+
         {/* KPIs */}
         <div className="grid grid-cols-5 gap-4 mb-8">
           {kpis.map((kpi) => (
@@ -301,7 +320,7 @@ export default function InternPage() {
               <h2 className="font-headline font-bold text-lg mb-4">Activity Log</h2>
               <div className="space-y-3 max-h-80 overflow-y-auto">
                 {activityLog.map((item, i) => (
-                  <div key={i} className="border-l-2 border-teal/20 pl-3 py-1">
+                  <div key={i} className={`border-l-2 pl-3 py-1 ${i === 0 ? 'border-emerald-500' : 'border-teal/20'}`}>
                     <p className="text-xs text-charcoal/40 font-mono">{item.date}</p>
                     <p className="text-sm font-medium">{item.action}</p>
                     <p className="text-xs text-charcoal/50">{item.detail}</p>
@@ -329,7 +348,11 @@ export default function InternPage() {
                     >
                       <div className="flex items-start justify-between">
                         <h3 className="font-headline font-medium">{doc.title}</h3>
-                        <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${
+                          doc.status === 'new' 
+                            ? 'bg-amber-100 text-amber-700' 
+                            : 'bg-emerald-100 text-emerald-700'
+                        }`}>
                           {doc.status}
                         </span>
                       </div>
@@ -362,6 +385,33 @@ export default function InternPage() {
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+
+        {/* Next Steps */}
+        <div className="mt-6 p-6 bg-teal/5 border border-teal/20 rounded-xl">
+          <h2 className="font-headline font-bold text-lg text-teal mb-4">🚀 Volgende Stappen</h2>
+          <div className="grid grid-cols-4 gap-4">
+            <div className="bg-white rounded-lg p-4">
+              <span className="text-2xl">1️⃣</span>
+              <h3 className="font-medium mt-2">DNS Koppelen</h3>
+              <p className="text-xs text-charcoal/50 mt-1">Namecheap → A record + CNAME</p>
+            </div>
+            <div className="bg-white rounded-lg p-4">
+              <span className="text-2xl">2️⃣</span>
+              <h3 className="font-medium mt-2">Google Workspace</h3>
+              <p className="text-xs text-charcoal/50 mt-1">hoi@heymorgen.agency</p>
+            </div>
+            <div className="bg-white rounded-lg p-4">
+              <span className="text-2xl">3️⃣</span>
+              <h3 className="font-medium mt-2">LinkedIn Page</h3>
+              <p className="text-xs text-charcoal/50 mt-1">Company page aanmaken</p>
+            </div>
+            <div className="bg-white rounded-lg p-4">
+              <span className="text-2xl">4️⃣</span>
+              <h3 className="font-medium mt-2">Eerste Post</h3>
+              <p className="text-xs text-charcoal/50 mt-1">Launch announcement</p>
             </div>
           </div>
         </div>
