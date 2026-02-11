@@ -7,6 +7,10 @@ const CORRECT_PASSWORD = 'nodefy123'
 
 // Activity log
 const activityLog = [
+  { date: '2026-02-11 21:55', action: 'Google Workspace guide', detail: 'Setup instructies voor email' },
+  { date: '2026-02-11 21:55', action: 'LinkedIn setup guide', detail: 'Company page + eerste 5 posts' },
+  { date: '2026-02-11 21:55', action: 'Domein opties', detail: '8 alternatieven voor morgen.agency' },
+  { date: '2026-02-11 21:40', action: 'Intern dashboard live', detail: 'Password protected /intern' },
   { date: '2026-02-11 21:36', action: 'Content Agent voltooid', detail: '20 LinkedIn posts + lead magnets' },
   { date: '2026-02-11 21:35', action: 'Outreach Agent voltooid', detail: 'Playbook met templates' },
   { date: '2026-02-11 21:34', action: 'ICP Agent voltooid', detail: '5 buyer personas' },
@@ -70,6 +74,27 @@ const documents = [
     description: '€500 budget, audiences, creatives, week 1 plan',
     status: 'live',
     file: 'ADS-STRATEGY.md',
+  },
+  {
+    id: 'domein',
+    title: 'DOMEIN OPTIES',
+    description: '8 alternatieven voor morgen.agency',
+    status: 'new',
+    file: 'DOMEIN-OPTIES.md',
+  },
+  {
+    id: 'linkedin',
+    title: 'LINKEDIN SETUP',
+    description: 'Company page, posts, engagement strategie',
+    status: 'new',
+    file: 'LINKEDIN-SETUP.md',
+  },
+  {
+    id: 'workspace',
+    title: 'GOOGLE WORKSPACE',
+    description: 'Email setup instructies',
+    status: 'new',
+    file: 'GOOGLE-WORKSPACE-SETUP.md',
   },
 ]
 

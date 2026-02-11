@@ -1,7 +1,7 @@
 # 🚀 morgen.agency MASTERPLAN
 
-> Laatste update: 2026-02-11 21:30
-> Status: FASE 1 - FUNDAMENT
+> Laatste update: 2026-02-11 21:55
+> Status: FASE 1 - FUNDAMENT (domein + LinkedIn pending)
 
 ---
 
