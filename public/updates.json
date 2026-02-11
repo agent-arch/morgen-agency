@@ -1,0 +1,102 @@
+{
+  "lastUpdate": "2026-02-11T22:59:00",
+  "version": "1.3.0",
+  "updates": [
+    {
+      "time": "2026-02-11 22:59",
+      "action": "Sales Dashboard ICP",
+      "detail": "Personas, pain points, communities toegevoegd"
+    },
+    {
+      "time": "2026-02-11 22:48",
+      "action": "Nodefy Sales Dashboard",
+      "detail": "Apart dashboard voor LinkedIn & outreach"
+    },
+    {
+      "time": "2026-02-11 22:29",
+      "action": "🎉 DOMEIN GEKOCHT",
+      "detail": "heymorgen.agency is van ons!"
+    },
+    {
+      "time": "2026-02-11 22:24",
+      "action": "LinkedIn posts klaar",
+      "detail": "5 posts ready to copy & paste"
+    },
+    {
+      "time": "2026-02-11 22:20",
+      "action": "/intern page live",
+      "detail": "Password protected dashboard"
+    },
+    {
+      "time": "2026-02-11 21:55",
+      "action": "Google Workspace guide",
+      "detail": "Setup instructies voor email"
+    },
+    {
+      "time": "2026-02-11 21:55",
+      "action": "LinkedIn setup guide",
+      "detail": "Company page + eerste 5 posts"
+    },
+    {
+      "time": "2026-02-11 21:36",
+      "action": "Content Agent voltooid",
+      "detail": "20 LinkedIn posts + lead magnets"
+    },
+    {
+      "time": "2026-02-11 21:35",
+      "action": "Outreach Agent voltooid",
+      "detail": "Playbook met templates"
+    },
+    {
+      "time": "2026-02-11 21:34",
+      "action": "ICP + Ads voltooid",
+      "detail": "5 personas + €500 budget strategie"
+    },
+    {
+      "time": "2026-02-11 21:30",
+      "action": "Masterplan geschreven",
+      "detail": "Volledige roadmap"
+    },
+    {
+      "time": "2026-02-11 18:45",
+      "action": "Website v1 live",
+      "detail": "Eerste versie op Vercel"
+    },
+    {
+      "time": "2026-02-11 17:54",
+      "action": "Project gestart",
+      "detail": "heymorgen.agency initiated"
+    }
+  ],
+  "tasks": {
+    "done": [
+      "Propositie uitwerken",
+      "Brandbook maken",
+      "Website bouwen",
+      "ICP definiëren",
+      "Domein kopen (heymorgen.agency)",
+      "Outreach playbook",
+      "Content strategie",
+      "Ads strategie",
+      "LinkedIn posts schrijven"
+    ],
+    "inProgress": [
+      "DNS koppelen aan Vercel",
+      "LinkedIn company page",
+      "Google Workspace setup"
+    ],
+    "todo": [
+      "Eerste outreach starten",
+      "Ads live zetten",
+      "Intake systeem bouwen",
+      "Eerste klant binnenhalen"
+    ]
+  },
+  "kpis": {
+    "documenten": { "current": 10, "target": 10 },
+    "linkedinPosts": { "current": 5, "target": 5 },
+    "leads": { "current": 0, "target": 50 },
+    "klanten": { "current": 0, "target": 1 },
+    "mrr": { "current": 0, "target": 500 }
+  }
+}

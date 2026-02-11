@@ -2,149 +2,50 @@
 
 import { useState, useEffect } from 'react'
 
-// Password protection
 const CORRECT_PASSWORD = 'nodefy123'
 
-// Activity log - newest first
-const activityLog = [
-  { date: '2026-02-11 22:29', action: '🎉 DOMEIN GEKOCHT', detail: 'heymorgen.agency is van ons!' },
-  { date: '2026-02-11 22:24', action: 'LinkedIn posts klaar', detail: '5 posts ready to copy & paste' },
-  { date: '2026-02-11 22:20', action: '/intern page live', detail: 'Dit dashboard' },
-  { date: '2026-02-11 21:55', action: 'Google Workspace guide', detail: 'Setup instructies voor email' },
-  { date: '2026-02-11 21:55', action: 'LinkedIn setup guide', detail: 'Company page + eerste 5 posts' },
-  { date: '2026-02-11 21:36', action: 'Content Agent voltooid', detail: '20 LinkedIn posts + lead magnets' },
-  { date: '2026-02-11 21:35', action: 'Outreach Agent voltooid', detail: 'Playbook met templates' },
-  { date: '2026-02-11 21:34', action: 'ICP Agent voltooid', detail: '5 buyer personas' },
-  { date: '2026-02-11 21:34', action: 'Ads Agent voltooid', detail: '€500 budget strategie' },
-  { date: '2026-02-11 21:30', action: 'Masterplan geschreven', detail: 'Volledige roadmap' },
-  { date: '2026-02-11 20:52', action: 'Scale tier toegevoegd', detail: '3e pricing optie' },
-  { date: '2026-02-11 20:33', action: 'Website v2 live', detail: 'Verbeterde homepage + /propositie' },
-  { date: '2026-02-11 18:45', action: 'Website v1 live', detail: 'Eerste versie' },
-  { date: '2026-02-11 17:54', action: 'Project gestart', detail: 'heymorgen.agency initiated' },
-]
+interface Update {
+  time: string
+  action: string
+  detail: string
+}
 
-// Documents data
+interface Tasks {
+  done: string[]
+  inProgress: string[]
+  todo: string[]
+}
+
+interface KPI {
+  current: number
+  target: number
+}
+
+interface UpdateData {
+  lastUpdate: string
+  version: string
+  updates: Update[]
+  tasks: Tasks
+  kpis: {
+    documenten: KPI
+    linkedinPosts: KPI
+    leads: KPI
+    klanten: KPI
+    mrr: KPI
+  }
+}
+
 const documents = [
-  {
-    id: 'masterplan',
-    title: 'MASTERPLAN',
-    description: 'Volledige roadmap, fases, milestones en KPIs',
-    status: 'live',
-    file: 'MASTERPLAN.md',
-  },
-  {
-    id: 'propositie',
-    title: 'PROPOSITIE',
-    description: 'Pricing, diensten, doelgroep, proces',
-    status: 'live',
-    file: 'PROPOSITIE.md',
-  },
-  {
-    id: 'brandbook',
-    title: 'BRANDBOOK',
-    description: 'Kleuren, fonts, tone of voice, logo',
-    status: 'live',
-    file: 'BRANDBOOK.md',
-  },
-  {
-    id: 'icp',
-    title: 'ICP',
-    description: '5 buyer personas, communities, lead scoring',
-    status: 'live',
-    file: 'ICP.md',
-  },
-  {
-    id: 'outreach',
-    title: 'OUTREACH PLAYBOOK',
-    description: 'LinkedIn, cold email, partnerships, templates',
-    status: 'live',
-    file: 'OUTREACH-PLAYBOOK.md',
-  },
-  {
-    id: 'content',
-    title: 'CONTENT CALENDAR',
-    description: '20 posts, lead magnets, nurture sequence',
-    status: 'live',
-    file: 'CONTENT-CALENDAR.md',
-  },
-  {
-    id: 'ads',
-    title: 'ADS STRATEGY',
-    description: '€500 budget, audiences, creatives, week 1 plan',
-    status: 'live',
-    file: 'ADS-STRATEGY.md',
-  },
-  {
-    id: 'linkedin-posts',
-    title: 'LINKEDIN POSTS',
-    description: '5 posts klaar om te posten',
-    status: 'new',
-    file: 'LINKEDIN-POSTS-READY.md',
-  },
-  {
-    id: 'linkedin',
-    title: 'LINKEDIN SETUP',
-    description: 'Company page, posts, engagement strategie',
-    status: 'live',
-    file: 'LINKEDIN-SETUP.md',
-  },
-  {
-    id: 'workspace',
-    title: 'GOOGLE WORKSPACE',
-    description: 'Email setup instructies',
-    status: 'live',
-    file: 'GOOGLE-WORKSPACE-SETUP.md',
-  },
-]
-
-// Progress data - UPDATED with domain
-const phases = [
-  {
-    name: 'Fase 1: Fundament',
-    status: 'done',
-    items: [
-      { task: 'Propositie uitwerken', done: true },
-      { task: 'Brandbook maken', done: true },
-      { task: 'Website bouwen', done: true },
-      { task: 'ICP definiëren', done: true },
-      { task: 'Domein kopen (heymorgen.agency)', done: true },
-      { task: 'DNS koppelen', done: false },
-    ],
-  },
-  {
-    name: 'Fase 2: Acquisitie',
-    status: 'active',
-    items: [
-      { task: 'Outreach playbook', done: true },
-      { task: 'Content strategie', done: true },
-      { task: 'Ads strategie', done: true },
-      { task: 'LinkedIn posts schrijven', done: true },
-      { task: 'LinkedIn company page', done: false },
-      { task: 'Google Workspace setup', done: false },
-      { task: 'Eerste outreach', done: false },
-      { task: 'Ads live', done: false },
-    ],
-  },
-  {
-    name: 'Fase 3: Operatie',
-    status: 'pending',
-    items: [
-      { task: 'Intake systeem', done: false },
-      { task: 'Onboarding proces', done: false },
-      { task: 'Campaign management', done: false },
-      { task: 'Reporting systeem', done: false },
-      { task: 'Eerste klant', done: false },
-    ],
-  },
-]
-
-// KPIs - UPDATED
-const kpis = [
-  { label: 'Documenten', value: '10/10', target: '10', color: 'teal' },
-  { label: 'LinkedIn Posts', value: '5', target: '5', color: 'teal' },
-  { label: 'Leads', value: '0', target: '50', color: 'charcoal' },
-  { label: 'Klanten', value: '0', target: '1', color: 'charcoal' },
-  { label: 'MRR', value: '€0', target: '€500', color: 'charcoal' },
+  { id: 'masterplan', title: 'MASTERPLAN', description: 'Volledige roadmap, fases, milestones', file: 'MASTERPLAN.md' },
+  { id: 'propositie', title: 'PROPOSITIE', description: 'Pricing, diensten, doelgroep', file: 'PROPOSITIE.md' },
+  { id: 'brandbook', title: 'BRANDBOOK', description: 'Kleuren, fonts, tone of voice', file: 'BRANDBOOK.md' },
+  { id: 'icp', title: 'ICP', description: '5 buyer personas, communities', file: 'ICP.md' },
+  { id: 'outreach', title: 'OUTREACH PLAYBOOK', description: 'LinkedIn, cold email, templates', file: 'OUTREACH-PLAYBOOK.md' },
+  { id: 'content', title: 'CONTENT CALENDAR', description: '20 posts, lead magnets', file: 'CONTENT-CALENDAR.md' },
+  { id: 'ads', title: 'ADS STRATEGY', description: '€500 budget, audiences', file: 'ADS-STRATEGY.md' },
+  { id: 'linkedin-posts', title: 'LINKEDIN POSTS', description: '5 posts klaar om te posten', file: 'LINKEDIN-POSTS-READY.md' },
+  { id: 'linkedin', title: 'LINKEDIN SETUP', description: 'Company page setup', file: 'LINKEDIN-SETUP.md' },
+  { id: 'workspace', title: 'GOOGLE WORKSPACE', description: 'Email setup instructies', file: 'GOOGLE-WORKSPACE-SETUP.md' },
 ]
 
 export default function InternPage() {
@@ -154,13 +55,17 @@ export default function InternPage() {
   const [activeDoc, setActiveDoc] = useState<string | null>(null)
   const [docContent, setDocContent] = useState<string>('')
   const [loadingDoc, setLoadingDoc] = useState(false)
+  const [updateData, setUpdateData] = useState<UpdateData | null>(null)
 
-  // Check localStorage for session
   useEffect(() => {
     const saved = localStorage.getItem('morgen-intern-auth')
-    if (saved === 'true') {
-      setAuthenticated(true)
-    }
+    if (saved === 'true') setAuthenticated(true)
+    
+    // Fetch updates
+    fetch('/updates.json')
+      .then(res => res.json())
+      .then(data => setUpdateData(data))
+      .catch(console.error)
   }, [])
 
   const handleLogin = (e: React.FormEvent) => {
@@ -198,6 +103,18 @@ export default function InternPage() {
     setLoadingDoc(false)
   }
 
+  const formatTime = (timeStr: string) => {
+    const date = new Date(timeStr)
+    const now = new Date()
+    const diffMs = now.getTime() - date.getTime()
+    const diffMins = Math.floor(diffMs / 60000)
+    const diffHours = Math.floor(diffMs / 3600000)
+    
+    if (diffMins < 60) return `${diffMins} min geleden`
+    if (diffHours < 24) return `${diffHours} uur geleden`
+    return date.toLocaleDateString('nl-NL')
+  }
+
   // Login screen
   if (!authenticated) {
     return (
@@ -217,10 +134,7 @@ export default function InternPage() {
               className={`w-full px-4 py-3 rounded-lg border ${error ? 'border-red-500' : 'border-charcoal/20'} focus:outline-none focus:border-teal`}
             />
             {error && <p className="text-red-500 text-sm mt-2">Verkeerd wachtwoord</p>}
-            <button
-              type="submit"
-              className="w-full mt-4 py-3 bg-teal hover:bg-teal/90 text-white font-headline font-medium rounded-lg transition-colors"
-            >
+            <button type="submit" className="w-full mt-4 py-3 bg-teal hover:bg-teal/90 text-white font-headline font-medium rounded-lg transition-colors">
               Login
             </button>
           </form>
@@ -229,105 +143,151 @@ export default function InternPage() {
     )
   }
 
-  // Dashboard
   return (
     <main className="min-h-screen bg-warm-bg">
       {/* Header */}
-      <header className="bg-white border-b border-charcoal/10 px-6 py-4">
+      <header className="bg-white border-b border-charcoal/10 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="font-headline text-xl font-bold text-teal">heymorgen</span>
             <span className="text-coral text-xl">.</span>
             <span className="text-sm text-charcoal/50 ml-2">Intern Dashboard</span>
-            <span className="ml-4 text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">
-              🎉 Domein gekocht!
-            </span>
           </div>
-          <button
-            onClick={handleLogout}
-            className="text-sm text-charcoal/50 hover:text-charcoal"
-          >
-            Logout
-          </button>
+          <div className="flex items-center gap-4">
+            {updateData && (
+              <span className="text-xs text-charcoal/40">
+                v{updateData.version} • Updated {formatTime(updateData.lastUpdate)}
+              </span>
+            )}
+            <button onClick={handleLogout} className="text-sm text-charcoal/50 hover:text-charcoal">Logout</button>
+          </div>
         </div>
       </header>
 
       <div className="max-w-7xl mx-auto p-6">
-        {/* Domain Alert */}
-        <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+        {/* Latest Update Banner */}
+        {updateData && updateData.updates[0] && (
+          <div className="mb-6 p-4 bg-gradient-to-r from-teal to-teal/80 rounded-xl text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-teal-100 uppercase tracking-wider">Laatste Update</p>
+                <h3 className="font-headline font-bold text-lg">{updateData.updates[0].action}</h3>
+                <p className="text-sm text-teal-100">{updateData.updates[0].detail}</p>
+              </div>
+              <span className="text-sm text-teal-100">{updateData.updates[0].time}</span>
+            </div>
+          </div>
+        )}
+
+        {/* DNS Alert - tijdelijk */}
+        <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-headline font-bold text-emerald-800">✅ heymorgen.agency is gekocht!</h3>
-              <p className="text-sm text-emerald-700 mt-1">Volgende stap: DNS koppelen aan Vercel</p>
+              <h3 className="font-headline font-bold text-amber-800">⏳ DNS koppelen (wacht op jou)</h3>
+              <p className="text-sm text-amber-700 mt-1">Namecheap → Advanced DNS → records toevoegen</p>
             </div>
-            <div className="text-right text-sm text-emerald-600">
-              <p><strong>A Record:</strong> @ → 76.76.21.21</p>
+            <div className="text-right text-sm text-amber-600">
+              <p><strong>A:</strong> @ → 76.76.21.21</p>
               <p><strong>CNAME:</strong> www → cname.vercel-dns.com</p>
             </div>
           </div>
         </div>
 
         {/* KPIs */}
-        <div className="grid grid-cols-5 gap-4 mb-8">
-          {kpis.map((kpi) => (
-            <div key={kpi.label} className="bg-white rounded-xl p-4 border border-charcoal/10">
-              <p className="text-xs text-charcoal/50 uppercase tracking-wider">{kpi.label}</p>
-              <p className={`font-mono text-2xl font-medium mt-1 ${kpi.color === 'teal' ? 'text-teal' : 'text-charcoal'}`}>
-                {kpi.value}
-              </p>
-              <p className="text-xs text-charcoal/40 mt-1">Target: {kpi.target}</p>
-            </div>
-          ))}
-        </div>
+        {updateData && (
+          <div className="grid grid-cols-5 gap-4 mb-8">
+            {[
+              { label: 'Documenten', ...updateData.kpis.documenten, prefix: '' },
+              { label: 'LinkedIn Posts', ...updateData.kpis.linkedinPosts, prefix: '' },
+              { label: 'Leads', ...updateData.kpis.leads, prefix: '' },
+              { label: 'Klanten', ...updateData.kpis.klanten, prefix: '' },
+              { label: 'MRR', ...updateData.kpis.mrr, prefix: '€' },
+            ].map((kpi) => (
+              <div key={kpi.label} className="bg-white rounded-xl p-4 border border-charcoal/10">
+                <p className="text-xs text-charcoal/50 uppercase tracking-wider">{kpi.label}</p>
+                <p className={`font-mono text-2xl font-medium mt-1 ${kpi.current >= kpi.target ? 'text-teal' : 'text-charcoal'}`}>
+                  {kpi.prefix}{kpi.current}
+                </p>
+                <p className="text-xs text-charcoal/40 mt-1">Target: {kpi.prefix}{kpi.target}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="grid grid-cols-12 gap-6">
-          {/* Left column - Progress & Activity */}
+          {/* Left column */}
           <div className="col-span-4 space-y-6">
             {/* Progress */}
-            <div className="bg-white rounded-xl p-6 border border-charcoal/10">
-              <h2 className="font-headline font-bold text-lg mb-4">Voortgang</h2>
-              <div className="space-y-6">
-                {phases.map((phase) => (
-                  <div key={phase.name}>
+            {updateData && (
+              <div className="bg-white rounded-xl p-6 border border-charcoal/10">
+                <h2 className="font-headline font-bold text-lg mb-4">Voortgang</h2>
+                <div className="space-y-6">
+                  {/* Done */}
+                  <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`w-2 h-2 rounded-full ${
-                        phase.status === 'done' ? 'bg-emerald-500' :
-                        phase.status === 'active' ? 'bg-teal' : 'bg-charcoal/20'
-                      }`} />
-                      <h3 className="font-medium text-sm">{phase.name}</h3>
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <h3 className="font-medium text-sm text-emerald-700">Done ({updateData.tasks.done.length})</h3>
                     </div>
                     <div className="ml-4 space-y-1">
-                      {phase.items.map((item) => (
-                        <div key={item.task} className="flex items-center gap-2 text-sm">
-                          {item.done ? (
-                            <span className="text-emerald-500">✓</span>
-                          ) : (
-                            <span className="text-charcoal/30">○</span>
-                          )}
-                          <span className={item.done ? 'text-charcoal/50' : 'text-charcoal'}>
-                            {item.task}
-                          </span>
+                      {updateData.tasks.done.map((task) => (
+                        <div key={task} className="flex items-center gap-2 text-sm text-charcoal/50">
+                          <span className="text-emerald-500">✓</span>
+                          <span>{task}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                ))}
+                  
+                  {/* In Progress */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-teal" />
+                      <h3 className="font-medium text-sm text-teal">In Progress ({updateData.tasks.inProgress.length})</h3>
+                    </div>
+                    <div className="ml-4 space-y-1">
+                      {updateData.tasks.inProgress.map((task) => (
+                        <div key={task} className="flex items-center gap-2 text-sm">
+                          <span className="text-teal">→</span>
+                          <span>{task}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Todo */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-charcoal/20" />
+                      <h3 className="font-medium text-sm text-charcoal/50">Todo ({updateData.tasks.todo.length})</h3>
+                    </div>
+                    <div className="ml-4 space-y-1">
+                      {updateData.tasks.todo.map((task) => (
+                        <div key={task} className="flex items-center gap-2 text-sm text-charcoal/40">
+                          <span>○</span>
+                          <span>{task}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Activity Log */}
-            <div className="bg-white rounded-xl p-6 border border-charcoal/10">
-              <h2 className="font-headline font-bold text-lg mb-4">Activity Log</h2>
-              <div className="space-y-3 max-h-80 overflow-y-auto">
-                {activityLog.map((item, i) => (
-                  <div key={i} className={`border-l-2 pl-3 py-1 ${i === 0 ? 'border-emerald-500' : 'border-teal/20'}`}>
-                    <p className="text-xs text-charcoal/40 font-mono">{item.date}</p>
-                    <p className="text-sm font-medium">{item.action}</p>
-                    <p className="text-xs text-charcoal/50">{item.detail}</p>
-                  </div>
-                ))}
+            {updateData && (
+              <div className="bg-white rounded-xl p-6 border border-charcoal/10">
+                <h2 className="font-headline font-bold text-lg mb-4">Activity Log</h2>
+                <div className="space-y-3 max-h-80 overflow-y-auto">
+                  {updateData.updates.map((item, i) => (
+                    <div key={i} className={`border-l-2 pl-3 py-1 ${i === 0 ? 'border-teal' : 'border-charcoal/10'}`}>
+                      <p className="text-xs text-charcoal/40 font-mono">{item.time}</p>
+                      <p className="text-sm font-medium">{item.action}</p>
+                      <p className="text-xs text-charcoal/50">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right column - Documents */}
@@ -335,7 +295,7 @@ export default function InternPage() {
             <div className="bg-white rounded-xl border border-charcoal/10 overflow-hidden">
               <div className="p-6 border-b border-charcoal/10">
                 <h2 className="font-headline font-bold text-lg">Documenten</h2>
-                <p className="text-sm text-charcoal/50 mt-1">Klik op een document om te lezen</p>
+                <p className="text-sm text-charcoal/50 mt-1">Klik om te lezen</p>
               </div>
               
               {!activeDoc ? (
@@ -346,16 +306,7 @@ export default function InternPage() {
                       onClick={() => loadDocument(doc.id)}
                       className="text-left p-4 rounded-lg border border-charcoal/10 hover:border-teal/50 hover:bg-teal/5 transition-all"
                     >
-                      <div className="flex items-start justify-between">
-                        <h3 className="font-headline font-medium">{doc.title}</h3>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${
-                          doc.status === 'new' 
-                            ? 'bg-amber-100 text-amber-700' 
-                            : 'bg-emerald-100 text-emerald-700'
-                        }`}>
-                          {doc.status}
-                        </span>
-                      </div>
+                      <h3 className="font-headline font-medium">{doc.title}</h3>
                       <p className="text-sm text-charcoal/50 mt-1">{doc.description}</p>
                       <p className="text-xs text-charcoal/30 mt-2 font-mono">{doc.file}</p>
                     </button>
@@ -365,53 +316,21 @@ export default function InternPage() {
                 <div>
                   <div className="px-6 py-3 bg-charcoal/5 flex items-center justify-between">
                     <span className="font-mono text-sm">{documents.find(d => d.id === activeDoc)?.file}</span>
-                    <button
-                      onClick={() => setActiveDoc(null)}
-                      className="text-sm text-teal hover:underline"
-                    >
-                      ← Terug naar overzicht
+                    <button onClick={() => setActiveDoc(null)} className="text-sm text-teal hover:underline">
+                      ← Terug
                     </button>
                   </div>
                   <div className="p-6">
                     {loadingDoc ? (
                       <p className="text-charcoal/50">Laden...</p>
                     ) : (
-                      <div className="prose prose-sm max-w-none">
-                        <pre className="whitespace-pre-wrap text-sm font-mono bg-charcoal/5 p-4 rounded-lg overflow-auto max-h-[600px]">
-                          {docContent}
-                        </pre>
-                      </div>
+                      <pre className="whitespace-pre-wrap text-sm font-mono bg-charcoal/5 p-4 rounded-lg overflow-auto max-h-[600px]">
+                        {docContent}
+                      </pre>
                     )}
                   </div>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-
-        {/* Next Steps */}
-        <div className="mt-6 p-6 bg-teal/5 border border-teal/20 rounded-xl">
-          <h2 className="font-headline font-bold text-lg text-teal mb-4">🚀 Volgende Stappen</h2>
-          <div className="grid grid-cols-4 gap-4">
-            <div className="bg-white rounded-lg p-4">
-              <span className="text-2xl">1️⃣</span>
-              <h3 className="font-medium mt-2">DNS Koppelen</h3>
-              <p className="text-xs text-charcoal/50 mt-1">Namecheap → A record + CNAME</p>
-            </div>
-            <div className="bg-white rounded-lg p-4">
-              <span className="text-2xl">2️⃣</span>
-              <h3 className="font-medium mt-2">Google Workspace</h3>
-              <p className="text-xs text-charcoal/50 mt-1">hoi@heymorgen.agency</p>
-            </div>
-            <div className="bg-white rounded-lg p-4">
-              <span className="text-2xl">3️⃣</span>
-              <h3 className="font-medium mt-2">LinkedIn Page</h3>
-              <p className="text-xs text-charcoal/50 mt-1">Company page aanmaken</p>
-            </div>
-            <div className="bg-white rounded-lg p-4">
-              <span className="text-2xl">4️⃣</span>
-              <h3 className="font-medium mt-2">Eerste Post</h3>
-              <p className="text-xs text-charcoal/50 mt-1">Launch announcement</p>
             </div>
           </div>
         </div>
