@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -9,23 +10,26 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-warm-white/90 backdrop-blur-md border-b border-charcoal/5">
       <div className="max-w-content mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-0.5">
+        <Link href="/" className="flex items-center gap-0.5">
           <span className="font-headline text-xl font-bold tracking-tight text-charcoal">
             morgen
           </span>
           <span className="text-coral text-2xl leading-none -mt-1">.</span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="#hoe-het-werkt" className="hover:text-teal transition-colors">
+          <a href="/#hoe-het-werkt" className="hover:text-teal transition-colors">
             Hoe het werkt
           </a>
-          <a href="#prijzen" className="hover:text-teal transition-colors">
+          <a href="/#prijzen" className="hover:text-teal transition-colors">
             Prijzen
           </a>
+          <Link href="/propositie" className="hover:text-teal transition-colors">
+            Propositie
+          </Link>
           <a
-            href="#start"
+            href="/#start"
             className="bg-coral hover:bg-coral-dark text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
           >
             Gratis intake →
@@ -61,22 +65,17 @@ export default function Header() {
       {/* Mobile menu */}
       {open && (
         <nav className="md:hidden bg-warm-white border-t border-charcoal/5 px-6 py-6 flex flex-col gap-4">
-          <a
-            href="#hoe-het-werkt"
-            onClick={() => setOpen(false)}
-            className="text-base font-medium"
-          >
+          <a href="/#hoe-het-werkt" onClick={() => setOpen(false)} className="text-base font-medium">
             Hoe het werkt
           </a>
-          <a
-            href="#prijzen"
-            onClick={() => setOpen(false)}
-            className="text-base font-medium"
-          >
+          <a href="/#prijzen" onClick={() => setOpen(false)} className="text-base font-medium">
             Prijzen
           </a>
+          <Link href="/propositie" onClick={() => setOpen(false)} className="text-base font-medium">
+            Propositie
+          </Link>
           <a
-            href="#start"
+            href="/#start"
             onClick={() => setOpen(false)}
             className="bg-coral text-white px-5 py-3 rounded-lg font-medium text-center"
           >

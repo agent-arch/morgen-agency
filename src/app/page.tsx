@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import WhyMorgen from "@/components/WhyMorgen";
 import HowItWorks from "@/components/HowItWorks";
+import AIAdvantage from "@/components/AIAdvantage";
 import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
+import SocialProof from "@/components/SocialProof";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -12,9 +15,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <WhyMorgen />
         <HowItWorks />
+        <AIAdvantage />
         <Pricing />
-        <Testimonials />
+        <SocialProof />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
