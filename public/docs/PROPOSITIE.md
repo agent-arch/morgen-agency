@@ -102,43 +102,65 @@ We doen één ding en dat doen we goed: **betaalde advertenties**.
 
 ## 4. Pricing
 
-### Pakket 1: Starter — €500/maand
-*Voor shops die beginnen met adverteren of hun eerste campagnes willen professionaliseren.*
+### Pakket 1: Launch — €750/maand
+*Voor shops die professioneel willen starten met Meta + Google Ads.*
 
 | Onderdeel | Details |
 |-----------|---------|
-| Platform | Meta Ads (Facebook + Instagram) |
-| Campagnes | Max 3 actieve campagnes |
+| Platformen | Meta Ads + Google Ads |
+| Campagnes | Max 4 actieve campagnes |
 | Optimalisatie | Dagelijks (AI-gedreven) |
 | Rapportage | Wekelijks dashboard + maandrapport |
-| Strategiegesprek | 1x per maand (30 min) |
-| Ad copy | Tot 6 ad variaties per maand |
-| Creative support | Basis briefings + feedback op aangeleverd materiaal |
-| Aanbevolen ad spend | €500 – €2.000/maand |
+| Strategiegesprek | 1x per maand |
+| Ad copy | Tot 8 ad variaties per maand |
+| Creative support | Briefings + feedback op aangeleverd materiaal |
+| Aanbevolen ad spend | Tot €2.000/maand |
 | Contractduur | Maandelijks opzegbaar (na eerste 2 maanden) |
 
-### Pakket 2: Groei — €900/maand
-*Voor shops die al adverteren en willen opschalen met meerdere kanalen.*
+### Pakket 2: Growth — €1.250/maand
+*Voor shops die serieus willen groeien met meerdere kanalen.*
 
 | Onderdeel | Details |
 |-----------|---------|
-| Platformen | Meta Ads + Google Ads (Search & Shopping) |
-| Campagnes | Max 6 actieve campagnes |
+| Platformen | Meta Ads + Google Ads + TikTok Ads |
+| Campagnes | Max 8 actieve campagnes |
 | Optimalisatie | Dagelijks (AI-gedreven) |
 | Rapportage | Wekelijks dashboard + maandrapport |
-| Strategiegesprek | 1x per maand (45 min) |
-| Ad copy | Tot 12 ad variaties per maand |
-| Creative support | Briefings + feedback + basis creative edits |
+| Strategiegesprek | 2x per maand |
+| Ad copy | Tot 16 ad variaties per maand |
+| Creative support | Briefings + feedback + creative productie support |
 | Retargeting | Volledige funnel setup |
+| Dedicated account lead | ✓ |
 | Aanbevolen ad spend | €2.000 – €5.000/maand |
 | Contractduur | Maandelijks opzegbaar (na eerste 2 maanden) |
+
+### Pakket 3: Scale — €1.750/maand
+*Voor shops die maximaal willen schalen met alle platformen.*
+
+| Onderdeel | Details |
+|-----------|---------|
+| Platformen | Alle (Meta, Google, TikTok, LinkedIn optioneel) |
+| Campagnes | Onbeperkt |
+| Optimalisatie | Dagelijks (AI-gedreven) |
+| Rapportage | Wekelijks dashboard + maandrapport |
+| Strategiegesprek | Wekelijks |
+| Ad copy | Onbeperkt |
+| Creative support | Volledige creative productie support |
+| Priority support | < 4 uur responstijd |
+| Dedicated account lead | ✓ |
+| Custom integraties | Op aanvraag |
+| Aanbevolen ad spend | €5.000 – €10.000/maand |
+| Contractduur | Maandelijks opzegbaar (na eerste 2 maanden) |
+
+### Enterprise (>€10K ad spend)
+→ **Doorverwijzing naar Nodefy** — dedicated team, enterprise tracking, multi-market
 
 ### Add-ons
 | Add-on | Prijs |
 |--------|-------|
-| TikTok Ads | +€200/maand |
-| Extra strategiegesprek | €75 per sessie |
-| Conversion tracking audit | €150 eenmalig |
+| LinkedIn Ads | +€300/maand |
+| Extra strategiegesprek | €95 per sessie |
+| Tracking audit + setup | €250 eenmalig |
 
 ### Pricing logica
 - **Geen percentage van ad spend** — dat incentiviseert ons om meer te spenderen, niet beter

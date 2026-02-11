@@ -16,7 +16,7 @@ const features = [
   { name: "Priority support (< 4 uur)", launch: false, growth: false, scale: true },
   { name: "Dedicated account lead", launch: false, growth: true, scale: true },
   { name: "Custom integraties", launch: false, growth: false, scale: "Op aanvraag" },
-  { name: "Aanbevolen ad spend", launch: "< €2K", growth: "€2K–€5K", scale: "€5K–€15K" },
+  { name: "Aanbevolen ad spend", launch: "< €2K", growth: "€2K–€5K", scale: "€5K–€10K" },
 ];
 
 function FeatureCell({ value }: { value: boolean | string }) {
@@ -146,7 +146,7 @@ export default function Pricing() {
                 <span className="text-coral">✓</span> Priority support (< 4 uur)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-white/40">↳</span> €5K–€15K ad spend
+                <span className="text-white/40">↳</span> €5K–€10K ad spend
               </li>
             </ul>
             <a
@@ -212,7 +212,7 @@ export default function Pricing() {
                 </span>
               </div>
               <h3 className="font-headline text-xl md:text-2xl font-bold text-charcoal">
-                Meer dan €15K ad spend per maand?
+                Meer dan €10K ad spend per maand?
               </h3>
               <p className="mt-2 text-charcoal/60 max-w-lg">
                 Voor grotere budgetten en complexere setups werken we samen met{" "}
