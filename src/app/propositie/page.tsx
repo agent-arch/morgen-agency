@@ -3,8 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Propositie — morgen.agency",
-  description: "De volledige propositie van morgen.agency: AI-native advertising voor webshops.",
+  title: "Propositie — heymorgen.agency",
+  description: "De volledige propositie van heymorgen.agency: AI-native advertising voor webshops.",
 };
 
 function TOC() {
@@ -78,7 +78,7 @@ export default function PropositiePage() {
             <p className="font-mono text-xs text-teal tracking-wider mb-3">ELEVATOR PITCH</p>
             <p className="text-charcoal/70 leading-relaxed text-lg italic">
               &ldquo;Kleine webshops willen groeien met ads, maar een agency kost €2K+ per maand 
-              en een freelancer is onbetrouwbaar. morgen.agency draait op AI: je krijgt dagelijkse 
+              en een freelancer is onbetrouwbaar. heymorgen.agency draait op AI: je krijgt dagelijkse 
               optimalisatie, wekelijkse rapportages en professioneel campagnebeheer — voor een 
               fractie van de prijs.&rdquo;
             </p>

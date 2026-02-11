@@ -23,11 +23,11 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "morgen.agency — Morgen begint vandaag",
+  title: "heymorgen.agency — Morgen begint vandaag",
   description:
     "AI-native marketing voor webshops. Meer omzet uit je ads, zonder gedoe. Vanaf €750/maand.",
   openGraph: {
-    title: "morgen.agency — Morgen begint vandaag",
+    title: "heymorgen.agency — Morgen begint vandaag",
     description: "AI-native marketing voor webshops. Meer omzet uit je ads, zonder gedoe.",
     type: "website",
   },

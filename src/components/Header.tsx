@@ -12,7 +12,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-0.5">
           <span className="font-headline text-xl font-bold tracking-tight text-charcoal">
-            morgen
+            heymorgen
           </span>
           <span className="text-coral text-2xl leading-none -mt-1">.</span>
         </Link>

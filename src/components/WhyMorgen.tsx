@@ -35,7 +35,7 @@ export default function WhyMorgen() {
   return (
     <section className="py-20 md:py-32 px-6">
       <div className="max-w-content mx-auto">
-        <p className="font-mono text-sm text-teal tracking-wide mb-4">Waarom morgen.agency</p>
+        <p className="font-mono text-sm text-teal tracking-wide mb-4">Waarom heymorgen.agency</p>
         <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tight max-w-[600px]">
           Professioneel adverteren, zonder agency-prijzen
         </h2>

@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-0.5">
           <span className="font-headline text-lg font-bold tracking-tight text-charcoal/40">
-            morgen
+            heymorgen
           </span>
           <span className="text-coral/40 text-xl leading-none -mt-0.5">.</span>
         </Link>
@@ -17,15 +17,15 @@ export default function Footer() {
           <Link href="/propositie" className="hover:text-charcoal transition-colors">
             Propositie
           </Link>
-          <a href="mailto:hallo@morgen.agency" className="hover:text-charcoal transition-colors">
-            hallo@morgen.agency
+          <a href="mailto:hoi@heymorgen.agency" className="hover:text-charcoal transition-colors">
+            hoi@heymorgen.agency
           </a>
           <span>KVK 00000000</span>
         </div>
 
         {/* Copyright */}
         <p className="text-xs text-charcoal/30">
-          © {new Date().getFullYear()} morgen.agency
+          © {new Date().getFullYear()} heymorgen.agency
         </p>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+'use client'
+
 const features = [
   { name: "Meta Ads (Facebook & Instagram)", launch: true, growth: true, scale: true },
   { name: "Google Ads (Search & Shopping)", launch: true, growth: true, scale: true },
@@ -143,7 +145,7 @@ export default function Pricing() {
                 <span className="text-coral">✓</span> Wekelijks strategiegesprek
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-coral">✓</span> Priority support (< 4 uur)
+                <span className="text-coral">✓</span> Priority support (&lt; 4 uur)
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-white/40">↳</span> €5K–€10K ad spend
@@ -201,7 +203,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Nodefy CTA - voor grotere budgetten */}
+        {/* Nodefy CTA */}
         <div className="mt-12 bg-gradient-to-r from-teal/5 via-coral/5 to-teal/5 border border-teal/20 rounded-2xl p-8 md:p-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
