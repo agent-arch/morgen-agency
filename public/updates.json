@@ -1,7 +1,22 @@
 {
-  "lastUpdate": "2026-02-11T23:05:00",
-  "version": "1.4.0",
+  "lastUpdate": "2026-02-12T09:10:00",
+  "version": "1.6.0",
   "updates": [
+    {
+      "time": "2026-02-12 09:10",
+      "action": "🔍 SEO compleet",
+      "detail": "Sitemap, robots.txt, OG tags, favicon, manifest"
+    },
+    {
+      "time": "2026-02-12 08:49",
+      "action": "🎨 Sanity CMS gebouwd",
+      "detail": "Content beheer klaar - wacht op project setup"
+    },
+    {
+      "time": "2026-02-12 08:37",
+      "action": "🌐 DNS LIVE!",
+      "detail": "heymorgen.agency werkt nu!"
+    },
     {
       "time": "2026-02-11 23:10",
       "action": "📧 EMAIL OUTREACH PLAN",
@@ -85,15 +100,18 @@
       "Website bouwen",
       "ICP definiëren",
       "Domein kopen (heymorgen.agency)",
+      "DNS koppelen aan Vercel",
       "Outreach playbook",
       "Content strategie",
       "Ads strategie",
-      "LinkedIn posts schrijven"
+      "LinkedIn posts schrijven",
+      "SEO setup (sitemap, robots, OG)"
     ],
     "inProgress": [
-      "DNS koppelen aan Vercel",
+      "Sanity CMS activeren",
       "LinkedIn company page",
-      "Google Workspace setup"
+      "Google Workspace setup",
+      "OG image maken"
     ],
     "todo": [
       "Eerste outreach starten",
@@ -103,7 +121,7 @@
     ]
   },
   "kpis": {
-    "documenten": { "current": 10, "target": 10 },
+    "documenten": { "current": 11, "target": 10 },
     "linkedinPosts": { "current": 5, "target": 5 },
     "leads": { "current": 0, "target": 50 },
     "klanten": { "current": 0, "target": 1 },

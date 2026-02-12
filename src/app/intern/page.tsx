@@ -180,17 +180,16 @@ export default function InternPage() {
           </div>
         )}
 
-        {/* DNS Alert - tijdelijk */}
-        <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+        {/* CMS Alert */}
+        <div className="mb-6 p-4 bg-teal/10 border border-teal/30 rounded-xl">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-headline font-bold text-amber-800">⏳ DNS koppelen (wacht op jou)</h3>
-              <p className="text-sm text-amber-700 mt-1">Namecheap → Advanced DNS → records toevoegen</p>
+              <h3 className="font-headline font-bold text-teal">🎨 Sanity CMS klaar</h3>
+              <p className="text-sm text-teal/80 mt-1">Nog 1 stap: run <code className="bg-teal/20 px-1 rounded">sanity login</code> in Terminal</p>
             </div>
-            <div className="text-right text-sm text-amber-600">
-              <p><strong>A:</strong> @ → 76.76.21.21</p>
-              <p><strong>CNAME:</strong> www → cname.vercel-dns.com</p>
-            </div>
+            <a href="https://heymorgen.agency/studio" target="_blank" className="px-4 py-2 bg-teal text-white rounded-lg text-sm font-medium hover:bg-teal/90">
+              Open Studio →
+            </a>
           </div>
         </div>
 
