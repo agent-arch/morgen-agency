@@ -23,14 +23,68 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "heymorgen.agency — Morgen begint vandaag",
-  description:
-    "AI-native marketing voor webshops. Meer omzet uit je ads, zonder gedoe. Vanaf €750/maand.",
-  openGraph: {
-    title: "heymorgen.agency — Morgen begint vandaag",
-    description: "AI-native marketing voor webshops. Meer omzet uit je ads, zonder gedoe.",
-    type: "website",
+  metadataBase: new URL('https://heymorgen.agency'),
+  title: {
+    default: "Morgen — AI-native marketing voor webshops",
+    template: "%s | Morgen",
   },
+  description:
+    "AI-native marketing voor e-commerce. Meer omzet uit je ads, zonder gedoe. Meta, Google & TikTok Ads beheer vanaf €750/maand. Resultaat binnen 14 dagen.",
+  keywords: [
+    "marketing bureau",
+    "e-commerce marketing",
+    "webshop marketing",
+    "Google Ads",
+    "Meta Ads",
+    "Facebook Ads",
+    "TikTok Ads",
+    "AI marketing",
+    "performance marketing",
+    "Nederland",
+  ],
+  authors: [{ name: "Morgen", url: "https://heymorgen.agency" }],
+  creator: "Morgen",
+  publisher: "Morgen",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    url: "https://heymorgen.agency",
+    siteName: "Morgen",
+    title: "Morgen — AI-native marketing voor webshops",
+    description: "AI-native marketing voor e-commerce. Meer omzet uit je ads, zonder gedoe. Vanaf €750/maand.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Morgen - AI-native marketing voor webshops",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Morgen — AI-native marketing voor webshops",
+    description: "AI-native marketing voor e-commerce. Meer omzet uit je ads, zonder gedoe.",
+    images: ["/og-image.png"],
+  },
+  verification: {
+    // google: "your-google-verification-code",
+  },
+  alternates: {
+    canonical: "https://heymorgen.agency",
+  },
+  category: "marketing",
 };
 
 export default function RootLayout({
@@ -40,6 +94,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className={`${dmSans.variable} ${inter.variable} ${jetbrains.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0D9488" />
+      </head>
       <body className="bg-warm-white text-charcoal font-body antialiased">{children}</body>
     </html>
   );

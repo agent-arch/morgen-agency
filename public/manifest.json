@@ -1,0 +1,16 @@
+{
+  "name": "Morgen",
+  "short_name": "Morgen",
+  "description": "AI-native marketing voor webshops",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFCF5",
+  "theme_color": "#0D9488",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
