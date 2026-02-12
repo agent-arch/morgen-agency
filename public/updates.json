@@ -1,7 +1,12 @@
 {
-  "lastUpdate": "2026-02-12T09:10:00",
-  "version": "1.6.0",
+  "lastUpdate": "2026-02-12T09:28:00",
+  "version": "1.7.0",
   "updates": [
+    {
+      "time": "2026-02-12 09:28",
+      "action": "🔧 SEO fixes",
+      "detail": "JSON-LD structured data, custom 404, email obfuscation"
+    },
     {
       "time": "2026-02-12 09:10",
       "action": "🔍 SEO compleet",

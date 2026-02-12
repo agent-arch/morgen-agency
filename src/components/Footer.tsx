@@ -1,4 +1,25 @@
+'use client'
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
+
+// Obfuscate email to prevent spam harvesting
+function EmailLink() {
+  const [email, setEmail] = useState('');
+  
+  useEffect(() => {
+    // Only reveal email on client-side
+    setEmail(['hoi', 'heymorgen.agency'].join('@'));
+  }, []);
+  
+  if (!email) return <span className="text-charcoal/40">contact</span>;
+  
+  return (
+    <a href={`mailto:${email}`} className="hover:text-charcoal transition-colors">
+      {email}
+    </a>
+  );
+}
 
 export default function Footer() {
   return (
@@ -17,9 +38,7 @@ export default function Footer() {
           <Link href="/propositie" className="hover:text-charcoal transition-colors">
             Propositie
           </Link>
-          <a href="mailto:hoi@heymorgen.agency" className="hover:text-charcoal transition-colors">
-            hoi@heymorgen.agency
-          </a>
+          <EmailLink />
           <span>KVK 00000000</span>
         </div>
 

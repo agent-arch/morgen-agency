@@ -87,6 +87,34 @@ export const metadata: Metadata = {
   category: "marketing",
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Morgen',
+  alternateName: 'heymorgen.agency',
+  url: 'https://heymorgen.agency',
+  logo: 'https://heymorgen.agency/icon.svg',
+  description: 'AI-native marketing voor e-commerce webshops. Meta, Google & TikTok Ads beheer.',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'NL',
+  },
+  priceRange: '€750 - €1750',
+  serviceType: ['Digital Marketing', 'Performance Marketing', 'E-commerce Marketing'],
+  areaServed: {
+    '@type': 'Country',
+    name: 'Netherlands',
+  },
+  sameAs: [],
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'EUR',
+    lowPrice: 750,
+    highPrice: 1750,
+    offerCount: 3,
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,6 +128,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0D9488" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="bg-warm-white text-charcoal font-body antialiased">{children}</body>
     </html>
