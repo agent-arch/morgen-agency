@@ -1,7 +1,12 @@
 {
-  "lastUpdate": "2026-02-12T09:28:00",
-  "version": "1.7.0",
+  "lastUpdate": "2026-02-12T10:40:00",
+  "version": "2.0.0",
   "updates": [
+    {
+      "time": "2026-02-12 10:40",
+      "action": "🎨 Website 2.0",
+      "detail": "Nieuwe Hero, Results sectie, verbeterde HowItWorks, WhyMorgen, CTA"
+    },
     {
       "time": "2026-02-12 09:28",
       "action": "🔧 SEO fixes",

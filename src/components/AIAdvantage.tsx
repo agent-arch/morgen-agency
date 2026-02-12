@@ -49,7 +49,7 @@ export default function AIAdvantage() {
           <div className="grid grid-cols-3 gap-4 mb-4">
             <div />
             <p className="font-mono text-xs text-charcoal/40 tracking-wider">TRADITIONELE AGENCY</p>
-            <p className="font-mono text-xs text-teal tracking-wider">MORGEN.AGENCY</p>
+            <p className="font-mono text-xs text-teal tracking-wider">HEYMORGEN</p>
           </div>
           {comparisons.map((row) => (
             <div key={row.label} className="grid grid-cols-3 gap-4 py-4 border-t border-charcoal/8">
