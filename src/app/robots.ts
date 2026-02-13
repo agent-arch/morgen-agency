@@ -4,9 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      disallow: ['/studio/', '/intern/', '/api/'],
+      disallow: '/',
     },
-    sitemap: 'https://heymorgen.agency/sitemap.xml',
+    // Sitemap disabled until launch
+    // sitemap: 'https://heymorgen.agency/sitemap.xml',
   }
 }

@@ -1,41 +1,51 @@
 {
-  "lastUpdate": "2026-02-12T10:40:00",
-  "version": "2.0.0",
+  "lastUpdate": "2026-02-13T16:50:00",
+  "version": "2.1.0",
   "updates": [
     {
+      "time": "2026-02-13 16:50",
+      "action": "Roadmap uitgebreid",
+      "detail": "Volledige voortgang + planning bijgewerkt, noindex toegevoegd"
+    },
+    {
+      "time": "2026-02-13 15:00",
+      "action": "Website op noindex",
+      "detail": "Niet zichtbaar in Google tot launch"
+    },
+    {
       "time": "2026-02-12 10:40",
-      "action": "🎨 Website 2.0",
+      "action": "Website 2.0",
       "detail": "Nieuwe Hero, Results sectie, verbeterde HowItWorks, WhyMorgen, CTA"
     },
     {
       "time": "2026-02-12 09:28",
-      "action": "🔧 SEO fixes",
+      "action": "SEO fixes",
       "detail": "JSON-LD structured data, custom 404, email obfuscation"
     },
     {
       "time": "2026-02-12 09:10",
-      "action": "🔍 SEO compleet",
+      "action": "SEO compleet",
       "detail": "Sitemap, robots.txt, OG tags, favicon, manifest"
     },
     {
       "time": "2026-02-12 08:49",
-      "action": "🎨 Sanity CMS gebouwd",
+      "action": "Sanity CMS gebouwd",
       "detail": "Content beheer klaar - wacht op project setup"
     },
     {
       "time": "2026-02-12 08:37",
-      "action": "🌐 DNS LIVE!",
+      "action": "DNS LIVE!",
       "detail": "heymorgen.agency werkt nu!"
     },
     {
       "time": "2026-02-11 23:10",
-      "action": "📧 EMAIL OUTREACH PLAN",
+      "action": "EMAIL OUTREACH PLAN",
       "detail": "Volledige strategie: domein, warm-up, data, sequences"
     },
     {
       "time": "2026-02-11 23:05",
       "action": "Pricing update",
-      "detail": "Nieuwe prijzen: €750/€1.250/€1.750 + Nodefy enterprise"
+      "detail": "Nieuwe prijzen: Launch/Growth/Scale tiers"
     },
     {
       "time": "2026-02-11 22:59",
@@ -49,7 +59,7 @@
     },
     {
       "time": "2026-02-11 22:29",
-      "action": "🎉 DOMEIN GEKOCHT",
+      "action": "DOMEIN GEKOCHT",
       "detail": "heymorgen.agency is van ons!"
     },
     {
@@ -68,24 +78,19 @@
       "detail": "Setup instructies voor email"
     },
     {
-      "time": "2026-02-11 21:55",
-      "action": "LinkedIn setup guide",
-      "detail": "Company page + eerste 5 posts"
-    },
-    {
       "time": "2026-02-11 21:36",
-      "action": "Content Agent voltooid",
+      "action": "Content strategie voltooid",
       "detail": "20 LinkedIn posts + lead magnets"
     },
     {
       "time": "2026-02-11 21:35",
-      "action": "Outreach Agent voltooid",
+      "action": "Outreach playbook voltooid",
       "detail": "Playbook met templates"
     },
     {
       "time": "2026-02-11 21:34",
       "action": "ICP + Ads voltooid",
-      "detail": "5 personas + €500 budget strategie"
+      "detail": "5 personas + budget strategie"
     },
     {
       "time": "2026-02-11 21:30",
@@ -96,45 +101,105 @@
       "time": "2026-02-11 18:45",
       "action": "Website v1 live",
       "detail": "Eerste versie op Vercel"
-    },
-    {
-      "time": "2026-02-11 17:54",
-      "action": "Project gestart",
-      "detail": "heymorgen.agency initiated"
     }
   ],
   "tasks": {
     "done": [
-      "Propositie uitwerken",
-      "Brandbook maken",
-      "Website bouwen",
-      "ICP definiëren",
+      "Propositie uitwerken (Launch/Growth/Scale)",
+      "Brandbook maken (kleuren, fonts, tone of voice)",
+      "Website bouwen (v2.0 met Results, WhyMorgen)",
+      "ICP definieren (5 buyer personas)",
       "Domein kopen (heymorgen.agency)",
       "DNS koppelen aan Vercel",
-      "Outreach playbook",
-      "Content strategie",
-      "Ads strategie",
-      "LinkedIn posts schrijven",
-      "SEO setup (sitemap, robots, OG)"
+      "Outreach playbook schrijven",
+      "Content strategie (20 posts)",
+      "Ads strategie (Meta focus)",
+      "LinkedIn posts schrijven (5 ready)",
+      "SEO setup (sitemap, robots, OG, JSON-LD)",
+      "Lead database opbouwen (~80 leads)",
+      "Email outreach plan schrijven",
+      "Sanity CMS code bouwen"
     ],
     "inProgress": [
-      "Sanity CMS activeren",
-      "LinkedIn company page",
-      "Google Workspace setup",
-      "OG image maken"
+      "Sanity CMS activeren (wacht op terminal login)",
+      "Google Workspace setup (hoi@heymorgen.agency)",
+      "OG image maken (1200x630px)",
+      "GA4 + GTM setup"
     ],
     "todo": [
-      "Eerste outreach starten",
-      "Ads live zetten",
-      "Intake systeem bouwen",
-      "Eerste klant binnenhalen"
+      "LinkedIn company page aanmaken",
+      "Eerste LinkedIn post plaatsen",
+      "Email domein warm-up starten",
+      "Eerste outreach batch (20 leads)",
+      "Ads campagne opzetten (Meta)",
+      "Intake/onboarding flow bouwen",
+      "Case study template maken",
+      "Eerste klant binnenhalen",
+      "Testimonial verzamelen"
     ]
   },
+  "roadmap": {
+    "fase1": {
+      "naam": "Foundation",
+      "status": "done",
+      "periode": "Week 1",
+      "items": [
+        "Propositie definieren",
+        "Website bouwen",
+        "Domein + DNS",
+        "Alle strategie docs"
+      ]
+    },
+    "fase2": {
+      "naam": "Infrastructure",
+      "status": "in-progress",
+      "periode": "Week 2",
+      "items": [
+        "Google Workspace email",
+        "LinkedIn company page",
+        "Sanity CMS live",
+        "GA4 tracking"
+      ]
+    },
+    "fase3": {
+      "naam": "Outreach",
+      "status": "todo",
+      "periode": "Week 3-4",
+      "items": [
+        "Email warm-up (2 weken)",
+        "LinkedIn content starten",
+        "Eerste DMs sturen",
+        "Meta Ads test"
+      ]
+    },
+    "fase4": {
+      "naam": "First Clients",
+      "status": "todo",
+      "periode": "Week 5-8",
+      "items": [
+        "Eerste klant signen",
+        "Onboarding perfectioneren",
+        "Case study maken",
+        "Referral programma"
+      ]
+    }
+  },
   "kpis": {
-    "documenten": { "current": 11, "target": 10 },
+    "documenten": { "current": 14, "target": 10 },
     "linkedinPosts": { "current": 5, "target": 5 },
-    "leads": { "current": 0, "target": 50 },
+    "leads": { "current": 80, "target": 100 },
     "klanten": { "current": 0, "target": 1 },
-    "mrr": { "current": 0, "target": 500 }
+    "mrr": { "current": 0, "target": 750 }
+  },
+  "sanityInfo": {
+    "title": "Wat is Sanity Studio?",
+    "description": "Sanity is een headless CMS waarmee je website content kunt beheren zonder code aan te raken. Via /studio kun je teksten, prijzen, testimonials en FAQ's aanpassen.",
+    "benefits": [
+      "Content wijzigen zonder developer",
+      "Real-time preview van changes",
+      "Versie geschiedenis",
+      "Meerdere gebruikers"
+    ],
+    "setup": "Run 'sanity login' in Terminal, dan 'sanity init' en kies 'heymorgen' project"
   }
 }
