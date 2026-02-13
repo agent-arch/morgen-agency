@@ -73,7 +73,7 @@ export default function Results() {
                   </svg>
                 ))}
               </div>
-              <p className="text-charcoal/80 leading-relaxed mb-6">"{t.quote}"</p>
+              <p className="text-charcoal/80 leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center">
                   <span className="font-mono text-sm text-teal font-medium">{t.initials}</span>

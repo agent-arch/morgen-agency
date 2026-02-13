@@ -438,7 +438,7 @@ export default function InternPage() {
                 <div className="absolute top-4 left-0 right-0 h-1 bg-charcoal/10 rounded" />
                 <div className="absolute top-4 left-0 h-1 bg-teal rounded" style={{ width: '35%' }} />
                 <div className="flex justify-between relative">
-                  {Object.entries(updateData.roadmap).map(([key, fase], i) => (
+                  {Object.entries(updateData.roadmap).map(([key, fase]) => (
                     <div key={key} className="text-center">
                       <div className={`w-8 h-8 rounded-full border-4 border-white mx-auto mb-2 ${getStatusColor(fase.status)}`} />
                       <p className="text-xs font-medium">{fase.naam}</p>
